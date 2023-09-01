@@ -1,7 +1,14 @@
 
 import java.awt.Color;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JColorChooser;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Main extends javax.swing.JFrame {
 
@@ -180,28 +187,62 @@ public class Main extends javax.swing.JFrame {
         int anio;
         double precio;
         Color color;
-        try {
 
-            marc = Ds_Marca.getText();
-            model = Ds_modelo.getText();
-            anio = Integer.parseInt(Ds_anio.getText());
-            precio = Double.parseDouble(Ds_venta.getText());
-            color = Ds_Colorcarro.getBackground();
+        marc = Ds_Marca.getText();
+        model = Ds_modelo.getText();
+        anio = Integer.parseInt(Ds_anio.getText());
+        precio = Double.parseDouble(Ds_venta.getText());
+        color = Ds_Colorcarro.getBackground();
 
-            Vehiculo v = new Vehiculo(marc, color, anio, precio);
+        Vehiculo v = new Vehiculo(marc, color, anio, precio);
 
-            Vehiculos.add(v);
+        Vehiculos.add(v);
+        String todos = "";
+        todos += marc + " \n " + model + " \n " + anio + " \n " + precio;
 
-            Ds_Marca.setText("");
-            Ds_Colorcarro.setBackground(Color.WHITE);
-            Ds_anio.setText("");
-            Ds_modelo.setText("");
-            Ds_venta.setText("");
-            
-        } catch (Exception e) {
-            e.printStackTrace();
+        JFileChooser jfc = new JFileChooser();
+        FileNameExtensionFilter filtro
+                = new FileNameExtensionFilter(
+                        "Archivos de Texto", "txt");
+        jfc.addChoosableFileFilter(filtro);
+        int seleccion = jfc.showSaveDialog(this);
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            try {
+
+                File fichero = null;
+                if (jfc.getFileFilter().getDescription().equals(
+                        "Archivos de Texto")) {
+                    fichero
+                            = new File(jfc.getSelectedFile().getPath() + ".txt");
+                } else {
+                    fichero = jfc.getSelectedFile();
+                }
+                fw = new FileWriter(fichero);
+                bw = new BufferedWriter(fw);
+                bw.write("[\n");
+                bw.write(todos);
+                bw.write("\n]\n");
+                bw.flush();
+                JOptionPane.showMessageDialog(this,
+                        "Archivo guardado exitosamente");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+            }
         }
 
+        Ds_Marca.setText("");
+        Ds_Colorcarro.setBackground(Color.WHITE);
+        Ds_anio.setText("");
+        Ds_modelo.setText("");
+        Ds_venta.setText("");
     }//GEN-LAST:event_Ds_GenerarVehiculoMouseClicked
 
     /**
