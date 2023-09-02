@@ -602,9 +602,9 @@ public class Main extends javax.swing.JFrame {
         for (Object vehiculoObj : Vehiculos) {
             if (vehiculoObj instanceof Vehiculo) {
                 Vehiculo vehiculo = (Vehiculo) vehiculoObj;
-                DefaultMutableTreeNode nodoModelo = new DefaultMutableTreeNode(vehiculo.getModelo());
-                DefaultMutableTreeNode nodoMarca = new DefaultMutableTreeNode(vehiculo.getMarca());
-                DefaultMutableTreeNode nodoAno = new DefaultMutableTreeNode(Integer.toString(vehiculo.getAno()));
+                DefaultMutableTreeNode nodoModelo = new DefaultMutableTreeNode(vehiculo.getModelo() + " <- Modelo");
+                DefaultMutableTreeNode nodoMarca = new DefaultMutableTreeNode(vehiculo.getMarca() + " <- Marca");
+                DefaultMutableTreeNode nodoAno = new DefaultMutableTreeNode(Integer.toString(vehiculo.getAno()) + " <- Anio");
 
                 nodoModelo.add(nodoMarca);
                 nodoMarca.add(nodoAno);
@@ -685,15 +685,35 @@ public class Main extends javax.swing.JFrame {
 
         Vendedores.add(x);
 
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Ds_listarVendedores.getModel();
+        DefaultTreeModel modelo = (DefaultTreeModel) Arbol.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+
+        raiz.removeAllChildren();
+        modelo.reload();
+
+        for (Object Vend : Vendedores) {
+            if (Vend instanceof Vendedor) {
+                Vendedor Vende = (Vendedor) Vend;
+                DefaultMutableTreeNode nodoModelo = new DefaultMutableTreeNode(Vende.getCarrosven()+ " <- Cantidad de carros vendidos");
+                DefaultMutableTreeNode nodoMarca = new DefaultMutableTreeNode(Vende.getDingen()+ " <- Dinero Generado");
+                DefaultMutableTreeNode nodoAno = new DefaultMutableTreeNode(Vende.getNombre() + " <- Nombre del perrin");
+
+                nodoModelo.add(nodoMarca);
+                nodoMarca.add(nodoAno);
+
+                raiz.add(nodoModelo);
+            }
+        }
+
+        DefaultComboBoxModel modelox = (DefaultComboBoxModel) Ds_listarVendedores.getModel();
         int maxElementos = Math.min(100, Vendedores.size());
 
         for (int i = 0; i < maxElementos; i++) {
             Vendedor temp = (Vendedor) Vendedores.get(i);
-            modelo.addElement(temp);
+            modelox.addElement(temp);
         }
 
-        Ds_listarVendedores.setModel(modelo);
+        Ds_listarVendedores.setModel(modelox);
 
         JFileChooser jfc = new JFileChooser();
         FileNameExtensionFilter filtro
