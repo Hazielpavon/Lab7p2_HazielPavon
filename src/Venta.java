@@ -6,11 +6,10 @@ public class Venta {
     private double costo; 
     private String carro; 
 
-    public Venta(String vendedor, String cliente, double costo, String carro) {
-        this.vendedor = vendedor;
-        this.cliente = cliente;
+    public Venta(Vendedor vendedor, Cliente cliente, double costo, Vehiculo carro) {
+        
         this.costo = costo;
-        this.carro = carro;
+        
     }
 
     public Venta() {
@@ -50,7 +49,7 @@ public class Venta {
 
     @Override
     public String toString() {
-        return  "Venta = " + vendedor + " , cliente = " + cliente + " , costo = " + costo + ", carro = " + carro;
+        return  "Venta = "+ "\n" + vendedor + "cliente = " + cliente + "," + "\n"+ "costo = " + costo + "," + "\n" + "carro = " + carro;
     }
     
     
