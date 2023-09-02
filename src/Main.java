@@ -11,13 +11,13 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Main extends javax.swing.JFrame {
-
+    
     private int id = 0;
-
+    
     public Main() {
         initComponents();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -45,6 +45,23 @@ public class Main extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         Ds_Carrosvendidos = new javax.swing.JSpinner();
         Ds_GenerarVendedores = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        Ds_Edadcliente = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        Ds_Cantcarroscomprados = new javax.swing.JSpinner();
+        Ds_NombreCliente = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        Ds_GenerarClientes = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        Ds_Sueldodisp = new javax.swing.JTextField();
+        Ds_Profesioncliente = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        Ds_Listarvehiculos = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -252,6 +269,142 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Vendedor", jPanel1);
 
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel11.setFont(new java.awt.Font("sansserif", 3, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Agregar Clientes");
+
+        jLabel12.setText("Cantidad de carros comprados");
+
+        jLabel13.setText("Edad");
+
+        Ds_NombreCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ds_NombreClienteActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("Nombre");
+
+        Ds_GenerarClientes.setText("Generar");
+        Ds_GenerarClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ds_GenerarClientesMouseClicked(evt);
+            }
+        });
+
+        jLabel15.setText("Sueldo disponible");
+
+        Ds_Profesioncliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ds_ProfesionclienteActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Profesion");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(279, 279, 279)
+                        .addComponent(jLabel11))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel13))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Ds_Edadcliente)
+                                    .addComponent(Ds_Cantcarroscomprados, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                                    .addComponent(Ds_NombreCliente)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Ds_Profesioncliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Ds_Sueldodisp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(333, 333, 333)
+                        .addComponent(Ds_GenerarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(385, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ds_NombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ds_Cantcarroscomprados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ds_Edadcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ds_Profesioncliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ds_Sueldodisp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(Ds_GenerarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+        );
+
+        jTabbedPane1.addTab("Cliente", jPanel3);
+
+        jPanel4.setBackground(new java.awt.Color(0, 102, 102));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        Ds_Listarvehiculos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Ds_Listarvehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ds_Listarvehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(444, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Venta", jPanel4);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -285,23 +438,23 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Ds_ColorcarroMouseClicked
 
     private void Ds_GenerarVehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ds_GenerarVehiculoMouseClicked
-
+        
         String marc, model;
         int anio;
         double precio;
         Color color;
-
+        
         marc = Ds_Marca.getText();
         model = Ds_modelo.getText();
         anio = Integer.parseInt(Ds_anio.getText());
         precio = Double.parseDouble(Ds_venta.getText());
         color = Ds_Colorcarro.getBackground();
         id += 1;
-
+        
         Vehiculo v = new Vehiculo(marc, model, color, anio, precio, id);
-
+        
         Vehiculos.add(v);
-
+        
         JFileChooser jfc = new JFileChooser();
         FileNameExtensionFilter filtro
                 = new FileNameExtensionFilter(
@@ -312,7 +465,7 @@ public class Main extends javax.swing.JFrame {
         BufferedWriter bw = null;
         if (seleccion == JFileChooser.APPROVE_OPTION) {
             try {
-
+                
                 File fichero = null;
                 if (jfc.getFileFilter().getDescription().equals(
                         "Archivos de Texto")) {
@@ -323,24 +476,19 @@ public class Main extends javax.swing.JFrame {
                 }
                 fw = new FileWriter(fichero, true);
                 bw = new BufferedWriter(fw);
-
-                for (int i = 0; i < Vehiculos.size() ; i++) {
-
+                if (Vehiculos.size() == 0) {
+                    bw.write("[\n");
+                    bw.write(v.toString());
+                    bw.write("\n]\n");
+                } else {
                     bw.write("\n[\n");
                     bw.write(v.toString());
-                    bw.write("\n],\n");
-
-                    if (i == Vehiculos.size() - 1) {
-                        bw.write("\n[\n");
-                        bw.write(v.toString());
-                        bw.write("\n]\n");
-                        break; 
-                    }
+                    bw.write("\n]\n");
                 }
                 bw.flush();
                 JOptionPane.showMessageDialog(this,
                         "Archivo guardado exitosamente");
-
+                
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -350,17 +498,12 @@ public class Main extends javax.swing.JFrame {
             } catch (IOException ex) {
             }
         }
-
-        Ds_Marca.setText(
-                "");
+        
+        Ds_Marca.setText("");
         Ds_Colorcarro.setBackground(Color.WHITE);
-
-        Ds_anio.setText(
-                "");
-        Ds_modelo.setText(
-                "");
-        Ds_venta.setText(
-                "");
+        Ds_anio.setText("");
+        Ds_modelo.setText("");
+        Ds_venta.setText("");
     }//GEN-LAST:event_Ds_GenerarVehiculoMouseClicked
 
     private void Ds_NombrevendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ds_NombrevendedorActionPerformed
@@ -368,15 +511,15 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Ds_NombrevendedorActionPerformed
 
     private void Ds_GenerarVendedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ds_GenerarVendedoresMouseClicked
-
+        
         String nombre = Ds_Nombrevendedor.getText();
         int cant = (int) Ds_Carrosvendidos.getValue();
         double din = Double.parseDouble(Ds_DineroGenerado.getText());
-
+        
         Vendedor x = new Vendedor(nombre, cant, din);
-
+        
         Vendedores.add(x);
-
+        
         JFileChooser jfc = new JFileChooser();
         FileNameExtensionFilter filtro
                 = new FileNameExtensionFilter(
@@ -387,7 +530,7 @@ public class Main extends javax.swing.JFrame {
         BufferedWriter bw = null;
         if (seleccion == JFileChooser.APPROVE_OPTION) {
             try {
-
+                
                 File fichero = null;
                 if (jfc.getFileFilter().getDescription().equals(
                         "Archivos de Texto")) {
@@ -396,25 +539,21 @@ public class Main extends javax.swing.JFrame {
                 } else {
                     fichero = jfc.getSelectedFile();
                 }
-                fw = new FileWriter(fichero, false);
+                fw = new FileWriter(fichero, true);
                 bw = new BufferedWriter(fw);
-
-                for (int i = 0; i < Vendedores.size() - 1; i++) {
-
+                if (Vendedores.size() == 0) {
+                    bw.write("[\n");
+                    bw.write(x.toString());
+                    bw.write("\n]\n");
+                } else {
                     bw.write("\n[\n");
                     bw.write(x.toString());
-                    bw.write("\n],\n");
-
-                    if (i == Vehiculos.size() - 1) {
-                        bw.write("\n[\n");
-                        bw.write(x.toString());
-                        bw.write("\n]\n");
-                    }
+                    bw.write("\n]\n");
                 }
                 bw.flush();
                 JOptionPane.showMessageDialog(this,
                         "Archivo guardado exitosamente");
-
+                
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -424,13 +563,90 @@ public class Main extends javax.swing.JFrame {
             } catch (IOException ex) {
             }
         }
-
+        
         Ds_Carrosvendidos.setValue(0);
         Ds_DineroGenerado.setText("");
         Ds_Nombrevendedor.setText("");
-
+        
 
     }//GEN-LAST:event_Ds_GenerarVendedoresMouseClicked
+
+    private void Ds_NombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ds_NombreClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Ds_NombreClienteActionPerformed
+
+    private void Ds_ProfesionclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ds_ProfesionclienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Ds_ProfesionclienteActionPerformed
+
+    private void Ds_GenerarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ds_GenerarClientesMouseClicked
+        
+        String nombre, profesion;        
+        int edad, cant;        
+        double sueldo;        
+        
+        nombre = Ds_NombreCliente.getText();        
+        profesion = Ds_Profesioncliente.getText();        
+        edad = Integer.parseInt(Ds_Edadcliente.getText());        
+        cant = (int) Ds_Cantcarroscomprados.getValue();
+        sueldo = Double.parseDouble(Ds_Sueldodisp.getText());
+        
+        Cliente c = new Cliente(nombre, edad, profesion, cant, sueldo);        
+        
+        Clientes.add(c);        
+        
+        JFileChooser jfc = new JFileChooser();
+        FileNameExtensionFilter filtro
+                = new FileNameExtensionFilter(
+                        "Archivos de Texto", "txt");
+        jfc.addChoosableFileFilter(filtro);
+        int seleccion = jfc.showSaveDialog(this);
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            try {
+                
+                File fichero = null;
+                if (jfc.getFileFilter().getDescription().equals(
+                        "Archivos de Texto")) {
+                    fichero
+                            = new File(jfc.getSelectedFile().getPath() + ".txt");
+                } else {
+                    fichero = jfc.getSelectedFile();
+                }
+                fw = new FileWriter(fichero, true);
+                bw = new BufferedWriter(fw);
+                if (Clientes.size() == 0) {
+                    bw.write("[\n");
+                    bw.write(c.toString());
+                    bw.write("\n]\n");
+                } else {
+                    bw.write("\n[\n");
+                    bw.write(c.toString());
+                    bw.write("\n]\n");
+                }
+                bw.flush();
+                JOptionPane.showMessageDialog(this,
+                        "Archivo guardado exitosamente");
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+            }
+        }
+        
+        Ds_NombreCliente.setText("");
+        Ds_Edadcliente.setText("");
+        Ds_Profesioncliente.setText("");
+        Ds_Carrosvendidos.setValue(0);
+        Ds_Sueldodisp.setText("");
+        
+
+    }//GEN-LAST:event_Ds_GenerarClientesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -446,24 +662,16 @@ public class Main extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -476,18 +684,33 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSpinner Ds_Cantcarroscomprados;
     private javax.swing.JSpinner Ds_Carrosvendidos;
     private javax.swing.JButton Ds_Colorcarro;
     private javax.swing.JTextField Ds_DineroGenerado;
+    private javax.swing.JTextField Ds_Edadcliente;
+    private javax.swing.JButton Ds_GenerarClientes;
     private javax.swing.JButton Ds_GenerarVehiculo;
     private javax.swing.JButton Ds_GenerarVendedores;
+    private javax.swing.JComboBox<String> Ds_Listarvehiculos;
     private javax.swing.JTextField Ds_Marca;
+    private javax.swing.JTextField Ds_NombreCliente;
     private javax.swing.JTextField Ds_Nombrevendedor;
+    private javax.swing.JTextField Ds_Profesioncliente;
+    private javax.swing.JTextField Ds_Sueldodisp;
     private javax.swing.JTextField Ds_anio;
     private javax.swing.JTextField Ds_modelo;
     private javax.swing.JTextField Ds_venta;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -498,6 +721,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 
