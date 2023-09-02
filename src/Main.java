@@ -18,19 +18,11 @@ import javax.swing.tree.DefaultTreeModel;
 public class Main extends javax.swing.JFrame {
 
     private int id = 0;
-    private DefaultTreeModel modelo2;
-    private DefaultMutableTreeNode nodos;
-
-    private DefaultTreeModel modelo3;
-    private DefaultMutableTreeNode nodos2;
+    
 
     public Main() {
         initComponents();
-        modelo2 = new DefaultTreeModel(new DefaultMutableTreeNode("Dia"));
-        Arbol.setModel(modelo2);
-
-        modelo3 = new DefaultTreeModel(new DefaultMutableTreeNode("Raiz"));
-        Arbol2.setModel(modelo3);
+        
 
     }
 
@@ -38,6 +30,7 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         Ds_Marca = new javax.swing.JTextField();
@@ -87,12 +80,15 @@ public class Main extends javax.swing.JFrame {
         Arbol2 = new javax.swing.JTree();
         jScrollPane2 = new javax.swing.JScrollPane();
         Arbol = new javax.swing.JTree();
+        jButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         Ds_modificartexto = new javax.swing.JTextArea();
         jLabel20 = new javax.swing.JLabel();
         Ds_modificar = new javax.swing.JButton();
         Ds_Guardarmod = new javax.swing.JButton();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -468,6 +464,13 @@ public class Main extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(Arbol);
 
+        jButton1.setText("Crear");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -475,7 +478,9 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(101, 101, 101)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addGap(67, 67, 67)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(118, 118, 118))
         );
@@ -487,6 +492,10 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(220, 220, 220)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Jtree", jPanel5);
@@ -961,6 +970,21 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Ds_GuardarmodMouseClicked
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+
+        DefaultTreeModel m = (DefaultTreeModel) Arbol.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
+        DefaultMutableTreeNode VehiculosA;
+
+        for (Object Vehiculo : Vehiculos) {
+            VehiculosA = new DefaultMutableTreeNode(Vehiculo);
+        }
+
+        m.reload();
+
+
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1030,6 +1054,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Ds_modificar;
     private javax.swing.JTextArea Ds_modificartexto;
     private javax.swing.JTextField Ds_venta;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1060,6 +1085,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
     ArrayList Vehiculos = new ArrayList();
