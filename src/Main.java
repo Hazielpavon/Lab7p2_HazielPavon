@@ -596,7 +596,7 @@ public class Main extends javax.swing.JFrame {
         DefaultTreeModel modelo = (DefaultTreeModel) Arbol.getModel();
         DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
 
-        raiz.removeAllChildren();
+        
         modelo.reload();
 
         for (Object vehiculoObj : Vehiculos) {
@@ -688,15 +688,15 @@ public class Main extends javax.swing.JFrame {
         DefaultTreeModel modelo = (DefaultTreeModel) Arbol.getModel();
         DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
 
-        raiz.removeAllChildren();
+        
         modelo.reload();
 
         for (Object Vend : Vendedores) {
             if (Vend instanceof Vendedor) {
                 Vendedor Vende = (Vendedor) Vend;
-                DefaultMutableTreeNode nodoModelo = new DefaultMutableTreeNode(Vende.getCarrosven()+ " <- Cantidad de carros vendidos");
-                DefaultMutableTreeNode nodoMarca = new DefaultMutableTreeNode(Vende.getDingen()+ " <- Dinero Generado");
-                DefaultMutableTreeNode nodoAno = new DefaultMutableTreeNode(Vende.getNombre() + " <- Nombre del perrin");
+                DefaultMutableTreeNode nodoModelo = new DefaultMutableTreeNode(Vende.getCarrosven() + " <- Cantidad de carros vendidos");
+                DefaultMutableTreeNode nodoMarca = new DefaultMutableTreeNode(Vende.getDingen() + " <- Dinero Generado");
+                DefaultMutableTreeNode nodoAno = new DefaultMutableTreeNode(Vende.getNombre() + " <- Nombre del Vendedor");
 
                 nodoModelo.add(nodoMarca);
                 nodoMarca.add(nodoAno);
@@ -790,14 +790,34 @@ public class Main extends javax.swing.JFrame {
 
         Clientes.add(c);
 
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Ds_ListarClientes.getModel();
+        DefaultTreeModel modelo = (DefaultTreeModel) Arbol.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+
+        
+        modelo.reload();
+
+        for (Object Clien : Clientes) {
+            if (Clien instanceof Cliente) {
+                Cliente cliente = (Cliente) Clien;
+                DefaultMutableTreeNode nodoModelo = new DefaultMutableTreeNode(cliente.getNombre() + " <- Nombre del cliente");
+                DefaultMutableTreeNode nodoMarca = new DefaultMutableTreeNode(cliente.getProfesion() + " <-  Profesion del cliente");
+                DefaultMutableTreeNode nodoAno = new DefaultMutableTreeNode(cliente.getSueldo() + " <- Sueldo");
+
+                nodoModelo.add(nodoMarca);
+                nodoMarca.add(nodoAno);
+
+                raiz.add(nodoModelo);
+            }
+        }
+
+        DefaultComboBoxModel modeloz = (DefaultComboBoxModel) Ds_ListarClientes.getModel();
         int maxClientes = Math.min(Clientes.size(), 10);
         for (int i = 0; i < maxClientes; i++) {
             Cliente temp = (Cliente) Clientes.get(i);
-            modelo.addElement(temp);
+            modeloz.addElement(temp);
         }
 
-        Ds_ListarClientes.setModel(modelo);
+        Ds_ListarClientes.setModel(modeloz);
 
         JFileChooser jfc = new JFileChooser();
         FileNameExtensionFilter filtro
@@ -866,6 +886,26 @@ public class Main extends javax.swing.JFrame {
         Vendedor v = (Vendedor) Vendedores.get(in3);
 
         Ventas.add(new Venta(v, C, p, V));
+
+        DefaultTreeModel modelo = (DefaultTreeModel) Arbol.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+
+        
+        modelo.reload();
+
+        for (Object Ven : Ventas) {
+            if (Ven instanceof Venta) {
+                Venta venta = (Venta) Ven;
+                DefaultMutableTreeNode nodoModelo = new DefaultMutableTreeNode(venta.getCliente()+ " <- Nombre del cliente");
+                DefaultMutableTreeNode nodoMarca = new DefaultMutableTreeNode(venta.getCosto()+ " <-  costo del carro comprado");
+                DefaultMutableTreeNode nodoAno = new DefaultMutableTreeNode(venta.getVendedor()+ " <- Vendedor del carro");
+
+                nodoModelo.add(nodoMarca);
+                nodoMarca.add(nodoAno);
+
+                raiz.add(nodoModelo);
+            }
+        }
 
         JFileChooser jfc = new JFileChooser();
         FileNameExtensionFilter filtro
